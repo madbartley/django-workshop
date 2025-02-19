@@ -128,9 +128,11 @@ footer {
 .blogtitle {
     text-align: left;
     font-size: 50px;
+    margin: 50px;
 }
 
 .blogbody {
     text-align: left;
+    padding: 50px;
 }
 
