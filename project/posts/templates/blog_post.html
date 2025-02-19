@@ -1,0 +1,21 @@
+{% extends 'layout.html' %} <!--extending the template we created earlier-->
+
+{% block title %}
+    Now reading: {{ blog.title }} 
+{% endblock %}
+
+{% block content %}
+
+<section>
+
+    <div class = "blogtitle"> 
+        {{ blog.title }}
+    </div>
+
+    <div class = "blogbody">
+        {{ blog.body }}
+    </div>
+
+</section>
+  
+{% endblock %}

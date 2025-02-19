@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} <!--extending the template we created earlier-->
+
+<!--Replacing the default values we listed earlier-->
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+<div class="welcome">
+    <h1 class="title">Welcome</h1>
+    <h2 class="subline">to my blog</h2>
+</div>
+
+<div class = "box">
+
+{% for blog in blog %} <!--this is a for loop that iterates through our posts = Blog.objects.all()-->
+
+<div class = "inner-box">
+    <h3> 
+        <a href="http://127.0.0.1:8000/blog/{{ blog.slug }}/"> <!-- summary: blog is our /posts app-name, and entry is our named url, -->
+            {{ blog.title }} 
+        </a> <!--This is how we pass in our named url, or our named url + app-name if you created that already, and we want our slug path converter to equal the field we created for each post in our post model: slug = post.slug-->
+    </h3> <!--double curly braces, no % signs-->
+</div>
+
+{% endfor %} <!--this ends our block code of the for loop-->
+</div>
+<div class="spacer"></div>
+
+{% endblock %}

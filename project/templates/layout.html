@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %} <!-- This will make it so we can load our static css file -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title%} <!-- Our block title will populate on pages if we don't add one ourselves -->
+            No title added!
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- This is where we link our style sheet -->
+
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> <!-- Create a basic nav bar -->
+        <a href="/about">About</a>
+    </nav>
+    <main>
+        {% block content %} <!-- This where we will put all of our variable content -->
+
+        {% endblock %}
+    </main>
+
+    <footer>
+    <div class = "socials">
+        <a href="linkedin">LinkedIn</a>
+        <a href="github">Github</a>
+    </div>
+        <p class = 'copyright'>&copy; 2025 Madeline Bartley<p>
+    </footer>
+</body>
+</html>
